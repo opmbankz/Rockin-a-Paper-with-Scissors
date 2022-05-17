@@ -1,0 +1,23 @@
+
+import random
+
+def play():
+    gamer = input("Your move gamer.\n'r' for The Rock, 'p' for Paper Bones & Glass Skin, 's' for Kiddie Scissors\n")
+    cpu = random.choice(['r', 'p', 's'])
+    
+    print('The machine chose ' + cpu)
+    
+    if gamer == cpu:
+        return 'Both of you are losers and i am severely disappointed'
+        
+    if is_win(gamer, cpu):
+        return 'a fat "W" graces you epic gamer'
+        
+    return 'Wow, you aren\'t very god at this game are you?'
+        # r > s, s > p, p > r
+def is_win(gamer, cpu):
+    # return true if gamer wins
+    if (gamer == 'r' and cpu == 's') or (gamer == 's' and cpu == 'p') or (gamer == 'p' and cpu == 'r'):
+        return True
+        
+print(play())
